@@ -1,0 +1,109 @@
+﻿<!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script>
+<![endif]-->
+<!-- BEGIN CORE PLUGINS -->
+<script src="~/assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="~/assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="~/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="~/assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="~/assets/global/scripts/app.min.js" type="text/javascript"></script>
+
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+<script src="~/assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
+<script src="~/assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+<script src="~/assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+<script src="~/assets/pages/scripts/login-4.min.js" type="text/javascript"></script>
+
+<!-- END THEME LAYOUT SCRIPTS -->
+
+<script src="@Url.Content("~/content/assets/js/site.js")"></script>
+<script src="@Url.Content("~/content/assets/js/scrollbar/jquery.mCustomScrollbar.concat.min.js")"></script>
+
+<script>
+
+    var initPickers = function () {
+        $('.date-picker').datepicker({
+            @*language: '@LanguageHelper.datepickerLanguage()',*@
+            rtl: App.isRTL(),
+            autoclose: true,
+        });
+
+        $(".form_datetime").datetimepicker({
+            autoclose: true,
+            @*language: '@LanguageHelper.datepickerLanguage()',*@
+            isRTL: App.isRTL(),
+            format: "dd.mm.yyyy hh:ii"
+        });
+
+        $('.timepicker-24').timepicker({
+            autoclose: true,
+            minuteStep: 5,
+            showSeconds: false,
+            showMeridian: false,
+            defaultTime: '00:00'
+        });
+    }
+
+    jQuery(document).ready(function () {
+
+        @*$.Select2LanguagedPlaceHolder = "@LanguageHelper.Translate("__SELECT__")";*@
+        if ($().select2) {
+            $('.form-control.select2me:not(.select2-container):not(.select2-offscreen)').select2({
+                @*placeholder: "@LanguageHelper.Translate("__SELECT__")",*@
+                allowClear: true,
+                width: "100%"
+            });
+        }
+
+        initPickers();
+        InputMask();
+        IsMobile();
+
+        // handle input group button click
+        $('.timepicker').parent('.input-group').on('click', '.input-group-btn', function (e) {
+            e.preventDefault();
+            $(this).parent('.input-group').find('.timepicker').timepicker('showWidget');
+        });
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    jQuery.extend(jQuery.validator.messages, {
+        @*required: "@LanguageHelper.Translate("__THIS_FIELD_IS_REQUIRED__")",
+        remote: "@LanguageHelper.Translate("__PLEASE_FIX_THIS_FIELD__")",
+        email: "@LanguageHelper.Translate("__PLEASE_ENTER_VALId_EMAIL__")",
+        url: "@LanguageHelper.Translate("__PLEASE_ENTER_VALId_URL__")",
+        date: "@LanguageHelper.Translate("__PLEASE_ENTER_VALId_DATE__")",
+        dateISO: "Please enter a valid date (ISO).",
+        number: "@LanguageHelper.Translate("__PLEASE_ENTER_VALId_NUMBER__")",
+        digits: "Please enter only digits.",
+        creditcard: "Please enter a valid credit card number.",
+        equalTo: "Please enter the same value again.",
+        accept: "Please enter a value with a valid extension.",
+        maxlength: jQuery.validator.format("@LanguageHelper.Translate("__TOO_LONG_PLEASE_ENTER_MAXIMUM_{0}_CHARACTERS__")"),
+        minlength: jQuery.validator.format("@LanguageHelper.Translate("__TOO_LONG_PLEASE_ENTER_MINIMUM_{0}_CHARACTERS__")"),
+        rangelength: jQuery.validator.format("Please enter a value between {0} and {1} characters long."),
+        range: jQuery.validator.format("Please enter a value between {0} and {1}."),
+        max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
+        min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")*@
+    });
+</script>

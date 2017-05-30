@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A0C51EB-B9A6-46DC-AA53-67FB8AFB7D1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Thoth.Data</RootNamespace>
+    <AssemblyName>Thoth.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SkipPostSharp>True</SkipPostSharp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.2.4000\lib\net40\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IActivitiesDal.cs" />
+    <Compile Include="Abstract\IBeaconsDal.cs" />
+    <Compile Include="Abstract\IBuildingClassBeaconsDal.cs" />
+    <Compile Include="Abstract\IBuildingClassesDal.cs" />
+    <Compile Include="Abstract\IBuildingsDal.cs" />
+    <Compile Include="Abstract\IClassActivityLogsDal.cs" />
+    <Compile Include="Abstract\IGroupUsersDal.cs" />
+    <Compile Include="Abstract\IMediaDal.cs" />
+    <Compile Include="Abstract\IPlaceholderDal.cs" />
+    <Compile Include="Abstract\IRefActivityByDal.cs" />
+    <Compile Include="Abstract\IRefActivityTypesDal.cs" />
+    <Compile Include="Abstract\IRefCitiesDal.cs" />
+    <Compile Include="Abstract\IRefCountiesDal.cs" />
+    <Compile Include="Abstract\IRefCountriesDal.cs" />
+    <Compile Include="Abstract\IRefDaysDal.cs" />
+    <Compile Include="Abstract\IRefFloorNumbersDal.cs" />
+    <Compile Include="Abstract\IRefLessonsDal.cs" />
+    <Compile Include="Abstract\IRefLessonTopicsDal.cs" />
+    <Compile Include="Abstract\IRefMimeTypesDal.cs" />
+    <Compile Include="Abstract\IRefSchoolTypesDal.cs" />
+    <Compile Include="Abstract\IRefTimesDal.cs" />
+    <Compile Include="Abstract\IRefUserTypesDal.cs" />
+    <Compile Include="Abstract\ISchoolsDal.cs" />
+    <Compile Include="Abstract\ITabletsDal.cs" />
+    <Compile Include="Abstract\ITermClassActivitiesDal.cs" />
+    <Compile Include="Abstract\ITermClassesDal.cs" />
+    <Compile Include="Abstract\ITermClassUsersDal.cs" />
+    <Compile Include="Abstract\ITermProgramsDal.cs" />
+    <Compile Include="Abstract\ITermsDal.cs" />
+    <Compile Include="Abstract\ITypeUsersDal.cs" />
+    <Compile Include="Abstract\IGroupsDal.cs" />
+    <Compile Include="Abstract\IUserTokensDal.cs" />
+    <Compile Include="Abstract\IUsersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfActivitiesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBeaconsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBuildingClassBeaconsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBuildingClassesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfBuildingsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfClassActivityLogssDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfGroupUsersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfMediaDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfPlaceholderDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefActivityByDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefActivityTypesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefCitiesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefCountiesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefCountriesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefDaysDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefFloorNumbersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefLessonsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefLessonTopicsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefMimeTypesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefSchoolTypesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefTimesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRefUserTypesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfSchoolsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTabletsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTermClassActivitiesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTermClassesDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTermClassUsersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTermProgramsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTermsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfTypeUsersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfGroupsDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUserTokensDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfUsersDal.cs" />
+    <Compile Include="Concrete\EntityFramework\ThothContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PredicateBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Thoth.Entity\Thoth.Entity.csproj">
+      <Project>{eee1c2c8-3ca0-4e65-aa7b-4771b00d369f}</Project>
+      <Name>Thoth.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Thoth.Framework.Core\Thoth.Framework.Core.csproj">
+      <Project>{b5a856e2-56f7-40ff-ae7a-448a4c24ef26}</Project>
+      <Name>Thoth.Framework.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

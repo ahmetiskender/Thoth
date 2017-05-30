@@ -1,0 +1,34 @@
+﻿
+<div class="hor-menu hor-menu-light hidden-sm hidden-xs">
+    <ul class="nav navbar-nav">
+        <li class="classic-menu-dropdown">@Html.ActionLink("Home", "Index", "Home")</li>
+
+        <li class="classic-menu-dropdown">@Html.ActionLink("My Profile", "MyProfile", "Home")</li>
+
+        @*<li class="classic-menu-dropdown">@{if (Request.IsAuthenticated){@Html.ActionLink("Logout", "Logout", "MyAccount")}}</li>*@
+
+
+        @*<li class="classic-menu-dropdown">
+            <a href="@Url.Action("Login","Home")">
+                Giriş
+            </a>
+        </li>*@
+
+         @*<li>
+            @{
+                if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("Logout","Home", FormMethod.Post,new{ id = "logoutForm"}))
+                    {                        
+                        <a href="javascript:document.getElementById('logoutForm').submit()">Çıkış</a>
+                    }
+                }
+                else
+                {
+                    @Html.ActionLink("Giriş","Login", "Account")
+                }
+            }
+        </li>*@
+
+    </ul>
+</div>

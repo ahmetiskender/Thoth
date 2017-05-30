@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Thoth.Web.Services.WebService" CodeBehind="WebService.svc.cs" %>

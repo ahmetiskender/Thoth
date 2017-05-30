@@ -1,0 +1,29 @@
+﻿
+@if (ViewBag.Success != null && ViewBag.Success == true)
+{
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+        <strong>@LanguageHelper.Translate("__SUCCESS__")</strong> @LanguageHelper.Translate("__EDIT_SUCCESS_MESSAGE__")
+    </div>
+}
+@if (ViewBag.Success != null && ViewBag.Success != false && ViewBag.Success != true)
+{
+    <div class="alert alert-success alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+        <strong>@LanguageHelper.Translate("__SUCCESS__")</strong> @LanguageHelper.Translate(ViewBag.Success)
+    </div>
+}
+@if (ViewBag.Error != null && ViewBag.Error == true)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+        <strong>@LanguageHelper.Translate("__ERROR__")</strong> @LanguageHelper.Translate("__EDIT_ERROR_MESSAGE__")
+    </div>
+}
+@if (ViewBag.Error != null && ViewBag.Error != false && ViewBag.Error != true)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+        <strong>@LanguageHelper.Translate("__ERROR__")</strong> @LanguageHelper.Translate(ViewBag.Error)
+    </div>
+}

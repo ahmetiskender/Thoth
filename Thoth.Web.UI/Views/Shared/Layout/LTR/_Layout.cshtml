@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="author" />
+
+    <link rel="icon" href="~/content/faviconrenkli.png">
+
+    @if (Request.Browser.IsMobileDevice)
+    {
+        <style>
+            body.modal-open {
+                overflow: hidden !important;
+            }
+
+            .modal {
+                position: absolute !important;
+            }
+        </style>
+    }
+
+    <style>
+        .dataTables_processing {
+            position: absolute;
+            width: auto;
+            text-align: center;
+        }
+    </style>
+
+    <!-- BEGIN STYLES -->
+    @Html.Partial("~/Views/Shared/Layout/LTR/_Styles.cshtml")
+
+    @RenderSection("Styles", false)
+    <!-- END STYLES-->
+
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body class="page-sidebar-closed-hide-logo page-container-bg-solid page-content-white page-header-fixed page-footer-fixed page-quick-sidebar-over-content page-full-width login">    
+
+    <!-- BEGIN HEADER -->
+    <div class="page-header navbar navbar-fixed-top">
+        <!-- BEGIN HEADER INNER -->
+        <div class="page-header-inner">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href=""><img src="~/Content/ThothLogoFull.png" alt="logo" class="logo-default img-responsve" style="margin-top: 0px;height: 50px;"></a>
+            </div>
+            <!-- END LOGO -->
+            <!-- BEGIN HORIZANTAL MENU -->
+            @Html.Partial("~/Views/Shared/Layout/LTR/_HorizantalMenu.cshtml", User)
+            <!-- END HORIZANTAL MENU -->
+            <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"></a>
+            <!-- END RESPONSIVE MENU TOGGLER -->
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <!-- BEGIN NOTIFICATION DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-user">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            @*@if (!string.IsNullOrEmpty(UserProfile.CurrentProfile.User.MediaPhoto))
+                                {
+                                    <img alt="" class="img-circle" src="@UserProfile.CurrentProfile.User.MediaPhoto/@UserProfile.CurrentProfile.token">
+                                }
+                                else
+                                {
+                                    <img alt="" class="img-circle" src="~/Content/nophoto.png">
+                                }*@
+                            @{
+                                if (Request.IsAuthenticated)
+                                {
+                                    var identity = (HttpContext.Current.User as Thoth.Web.UI.MyPrincipal).Identity as Thoth.Web.UI.MyIdentity;
+                                    <span class="username">@string.Format("Hoş Geldin {0} {1} ", identity.User.FirstName, identity.User.LastName)</span>
+                                }
+                            }
+                            @*<span class="username">ahmet iskender</span>*@
+                        </a>
+                    </li>
+
+                    <!-- END USER LOGIN DROPDOWN -->
+                    <!-- BEGIN QUICK SIDEBAR TOGGLER -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-quick-sidebar-toggler">
+                        <a href="@Url.Action("Logout","MyAccount")" class="dropdown-toggle">
+                            <i class="icon-logout"></i>
+                        </a>
+                    </li>
+                    <!-- END QUICK SIDEBAR TOGGLER -->
+                </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+
+        </div>
+        <!-- END HEADER INNER -->
+    </div>
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+    <div class="page-container">
+
+        @Html.Partial("~/Views/Shared/Layout/LTR/_HorizantalMenuMobile.cshtml", User)
+
+        <!-- BEGIN CONTENT -->
+        <div class="page-content-wrapper">
+            <div class="page-content" id="scrollable-content">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- END CONTENT -->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner">
+            2017 &copy; YD Yazılım Eğitim Danışmanlık ve Bilgi Sistemleri Tic. Ltd. Şti.
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+
+    <!-- BEGIN JAVASCRIPTS -->
+    @Html.Partial("~/Views/Shared/Layout/LTR/_Javascripts.cshtml")
+
+    @RenderSection("Scripts", false)
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+
+</html>

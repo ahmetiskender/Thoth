@@ -1,0 +1,11 @@
+﻿<li>
+    @{
+        if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("Logout", "MyAccount", FormMethod.Post, new { id = "logoutForm" }))
+            {
+                <a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+            }
+        }
+    }
+</li>

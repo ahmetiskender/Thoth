@@ -1,0 +1,19 @@
+{
+    "metronicGroupActions": "_TOTAL_ records selected:  ",
+    "metronicAjaxRequestGeneralError": "İsteğiniz gerçekleştirilemedi. Lütfen internet bağlantınızı kontrol ediniz",
+    "lengthMenu": "<span class='seperator'>|</span>Sayfada _MENU_ Kayıt Göster",
+    "info": "<span class='seperator'>|</span>Toplam _TOTAL_ kayıt bulundu",
+    "infoEmpty": "Gösterilebilecek kayıt bulunamadı",
+    "emptyTable": "Kayıt Bulunamadı",
+    "zeroRecords": "Eşleşen kayıt bulunamadı",
+    "search":  "BUL",
+    "paginate": {
+        "previous": "Önceki",
+        "next": "Sonraki",
+        "last": "Son",
+        "first": "İlk",
+        "page": "Sayfa",
+        "pageOf": "<span class='seperator'>|</span>Toplam Sayfa"
+    }
+    
+}
